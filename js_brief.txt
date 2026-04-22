@@ -1,0 +1,151 @@
+ 1. Initial Setup
+let input = document.getElementById("cityInput");
+let loader = document.getElementById("loader");
+let apiKey = "YOUR_API_KEY_HERE";
+ Meaning:
+•	input → user enter chese city 
+•	loader → loading text/spinner 
+•	apiKey → OpenWeather API key 
+________________________________________
+ 2. Page Load
+window.onload = function () {
+    showHistory();
+};
+ Page open ayinappudu:
+•	Previous searches (history) display avutayi 
+________________________________________
+ 3. Enter Key Support
+input.addEventListener("keypress", e => {
+    if (e.key === "Enter") getWeather();
+});
+ Enter press chesthe:
+•	getWeather() call avutundi 
+•	Button click avasaram ledu 
+________________________________________
+ 4. Loader Functions
+function showLoader() {
+    loader.style.display = "block";
+}
+function hideLoader() {
+    loader.style.display = "none";
+}
+ API call time lo:
+•	Loading show 
+•	Data vachaka hide 
+________________________________________
+ 5. getWeather() (Main Function )
+async function getWeather()
+ Steps:
+1. Input read
+let city = input.value.trim();
+if (!city) return;
+ Empty aithe stop
+________________________________________
+2. API call
+fetch(url)
+ Server ki request pampistundi
+________________________________________
+3. JSON convert
+let data = await res.json();
+ Response → JSON format
+________________________________________
+4. Error check
+if (data.cod === "404")
+ Wrong city → alert
+________________________________________
+5. Display
+displayWeather(data);
+getForecast(data.coord.lat, data.coord.lon);
+saveHistory(city);
+
+•	Weather show 
+•	Forecast fetch 
+•	History save 
+________________________________________
+ 6. getLocationWeather()
+navigator.geolocation.getCurrentPosition(...)
+ User current location (GPS) tiskuntundi
+ lat, lon use chesi:
+•	Weather fetch chestundi 
+________________________________________
+ 7. displayWeather()
+function displayWeather(data)
+ UI update chestundi:
+data.name → city  
+data.main.temp → temperature  
+data.weather[0].description → condition  
+________________________________________
+ Icon
+data.weather[0].icon
+ Image URL create chesi display chestundi
+________________________________________
+ Background change
+if (condition.includes("cloud"))
+ Weather batti:
+•	Cloud → grey 
+•	Rain → dark blue 
+•	Clear → yellow 
+________________________________________
+ 8. getForecast()
+async function getForecast(lat, lon)
+  5-day forecast fetch chestundi
+________________________________________
+Loop logic
+for (let i = 0; i < data.list.length; i += 8)
+ API 3-hour data istundi
+ 8 steps = 1 day
+________________________________________
+Card create
+document.createElement("div")
+ Each day ki:
+•	Date 
+•	Icon 
+•	Temperature 
+________________________________________
+ 9. Theme Toggle
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+}
+ Click chesthe:
+•	Dark mode ON/OFF 
+________________________________________
+ 10. History Save
+function saveHistory(city)
+ Steps:
+•	Old history load 
+•	New city add 
+•	Max 5 items 
+•	LocalStorage lo save 
+________________________________________
+ 11. Show History
+function showHistory()
+ UI lo display chestundi
+ Each city:
+span.onclick = () => {
+    input.value = city;
+    getWeather();
+};
+ Click → auto search 
+________________________________________
+ Full Flow (Simple)
+1.	User city enter 
+2.	API call 
+3.	JSON data 
+4.	UI update 
+5.	Forecast show 
+6.	History save 
+7.	Theme + background change 
+________________________________________
+ Key Concepts Used
+•	DOM Manipulation 
+•	Event Handling 
+•	Async / Await 
+•	Fetch API 
+•	JSON 
+•	Local Storage 
+•	Geolocation API 
+________________________________________
+ One Line Summary
+
+This code fetches real-time weather data, displays it dynamically, and enhances user experience with features like forecast, history, and theme toggle.
+

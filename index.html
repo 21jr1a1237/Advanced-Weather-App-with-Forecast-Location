@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weather App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="title">Weather App</h1>
+
+<div class="container">
+
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getWeather()">Search</button>
+    </div>
+
+    <button class="loc-btn" onclick="getLocationWeather()">📍 Use My Location</button>
+    <button class="theme-btn" onclick="toggleTheme()">🌗 Toggle Mode</button>
+
+    <div id="loader" class="loader">Loading...</div>
+
+    <div id="weatherResult" class="result">
+        <h2 id="cityName"></h2>
+        <img id="icon">
+        <p id="temp"></p>
+        <p id="desc"></p>
+    </div>
+
+    <div id="forecast" class="forecast"></div>
+
+    <div id="history" class="history"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

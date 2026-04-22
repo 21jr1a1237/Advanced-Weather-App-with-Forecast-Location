@@ -1,0 +1,74 @@
+ Project Overview
+
+This is an advanced Weather Web Application built using HTML, CSS, and JavaScript that fetches real-time weather data from the OpenWeather API.
+ User:
+•	City enter cheyachu 
+•	Current location use cheyachu 
+•	Weather + forecast chudachu 
+________________________________________
+ Main Purpose
+
+To provide real-time weather information in a simple and interactive interface.
+________________________________________
+🚀 Features Summary
+•	🔍 City search 
+•	📍 Auto location (GPS) 
+•	🌡️ Temperature display 
+•	🌤️ Weather condition + icon 
+•	📅 5-day forecast 
+•	⏳ Loading indicator 
+•	🌗 Dark/Light mode 
+•	🕘 Search history 
+________________________________________ Technologies Used
+•	HTML → Structure 
+•	CSS → UI design 
+•	JavaScript → Logic 
+•	API (OpenWeather) → Data source 
+•	LocalStorage → Save search history 
+________________________________________
+ How Code Works (Simple Flow)
+ User Input
+•	User city name enter chestadu 
+•	or location button click chestadu 
+________________________________________
+ API Call
+ JS fetch() use chesi API ki request pampistundi:
+fetch(url)
+ API JSON format lo data pampistundi
+________________________________________
+Data Processing
+JSON nundi data extract chestam:
+•	data.main.temp → temperature 
+•	data.weather[0].description → condition 
+________________________________________
+ UI Update (DOM)
+ Page lo display chestam:
+•	City name 
+•	Temperature 
+•	Icon 
+•	Description 
+________________________________________
+Forecast
+ 5-day data loop chesi cards create chestam
+________________________________________
+Extra Features
+•	🌗 Theme toggle → CSS class change 
+•	🕘 History → localStorage lo save 
+•	📍 Location → geolocation API 
+________________________________________
+ Key Concepts Used
+•	DOM Manipulation 
+•	Event Handling 
+•	Async / Await 
+•	Fetch API 
+•	JSON handling 
+•	Local Storage 
+________________________________________
+One Line (Interview Ready)
+
+This project fetches and displays real-time weather data using an external API and demonstrates modern JavaScript concepts like async operations, DOM manipulation, and local storage.
+________________________________________
+Simple Explanation (very easy)
+
+User city enter chesthe app internet nundi weather data tiskoni screen lo chupistundi.
+
